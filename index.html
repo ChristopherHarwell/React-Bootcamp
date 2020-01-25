@@ -1,0 +1,54 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+      <div id="app"></div>
+
+      <script>
+
+          const name = 'Chris';
+          handle = '@chrisharwell';
+          
+        /*
+        React.createElement creates a 
+        object representation of a DOM node
+        
+        arguments for createElement()
+            the arguments for :
+
+            1.) the tag (e.g. 'h1')
+
+            2.) any attributes we want to add 
+                to the Object Representation of the 
+                DOM node we are creating 
+                (e.g. <h1 {attribute goes here}=header></h1>)
+
+            3.) The children of the element we just created 
+                (e.g. <h1>{children go here}</h1>)
+        */
+          const headerElement = React.createElement(
+              'h1',
+              { id: 'header' },
+              'Chris'
+          );
+
+          console.log('headerElement', headerElement)
+
+          /*The arguments for ReactDOM.render are:
+            1.) the element we want to render
+            2.) where you want react to mount/render to
+          */
+          ReactDOM.render(
+              headerElement,
+              document.getElementById('app')
+          )
+      </script>
+  </body>
+  </html>
